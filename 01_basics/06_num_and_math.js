@@ -31,7 +31,7 @@ console.log(Math.floor(Math.random()*10) + 1);
 const min = 10
 const max = 20
 
-console.log(Math.floor(Math.random()*(max-min+1)+min)); // here we min 10+ value
+console.log(Math.floor(Math.random()*(max-min+1)+min)); // here we want min 10+ value like 12 , 14, 15
 /*
 Math.abs(-5)            // 5           // Absolute value
 Math.acos(1)            // 0           // Arc cosine (in radians)
