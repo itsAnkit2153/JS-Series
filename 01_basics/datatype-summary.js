@@ -48,3 +48,30 @@ const myFunction = function(){
 // eg. myObj => 'object'
 // eg. anotherId => 'symbol'
 
+
+//******************************************************** */
+//Two types memory => Stack(in Primitive , stack memory used) => jo variable declare kiya uski ek copy milta hai 
+// Heap(in Non-Primitive, heap memory used) => yaha original value ka reference milta hai, jo bhi aap change karenge vo original value me change hoga
+
+
+//stack example
+let myYoutubeChannel = "LuciferMorningStar"
+let anotherName = myYoutubeChannel // copy of original value
+anotherName = "Luci" // yaha per aap original value nahi balki aap uske copy ka value change kar rahe hai
+console.log(myYoutubeChannel);
+console.log(anotherName);
+
+//heap example
+
+let userOne = {
+    email: "ankit@gmail.com",
+    upi: "sbi@123",
+}
+
+let userTwo = userOne // we giving reference of original value
+
+userTwo.email = "lucifer@gmail.com"
+
+console.log(userOne.email);// it change both because both taking same reference means it comes from original so if we change reference then it change both
+console.log(userTwo.email);
+
