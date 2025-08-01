@@ -40,3 +40,47 @@ function loginuserMessage(username){ // if you want that username not be empty w
 // if we don't pass any number then it will give "undefined" not null   
 
 console.log(loginuserMessage())
+
+
+/************************************************************************************ */
+
+function calculateCartPrice(num1){
+    return num1
+}
+console.log(calculateCartPrice(200)); // 200
+//but if we pass a lot of value like 200, 500, 600 then we should use '...num1' method which called 'REST OPERATOR' or 'SPREAD METHOD' which help to pass multiple value
+function cartPrice(...num1){
+    return num1
+}
+console.log(cartPrice(200,500,600));//[ 200, 500, 600 ]
+
+function priceCart(val1, val2, ...num1){
+    return num1
+}
+console.log(priceCart(200,500,700,800));//[ 700, 800 ] becoz val1=200, val2=500, ...num1=700,800
+
+const user = {
+    username: "Ankit",
+    price: 299
+}
+function handleObject(anyobject){
+    console.log(`Username is ${anyobject.username} and Price is ${anyobject.price}`);
+}
+handleObject(user);
+//OR
+handleObject({
+    username: "Rakesh",
+    price: 500
+})
+
+const newArray = [200, 500, 600, 700]
+
+function secondElement(getarray){
+    console.log(getarray[1]);
+}
+
+secondElement(newArray);
+//OR
+secondElement([
+    599,644,344,233
+]);
