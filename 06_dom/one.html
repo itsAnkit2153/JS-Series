@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+   
+    <title>DOM, learning</title>
+    <style>
+      h1,h2,h3,h4,ul{
+         color: white;
+      }
+      p{
+         color: white;
+      }    
+      </style>
+</head>
+<body style="background-color: black;">
+<!--                            window
+                                  |
+                               Document
+                                  |
+                                 HTML
+                                 / \ 
+                              HEAD  BODY
+                           /   /       \
+                     title   meta      div-attribute
+                     /        /           /\
+               text node    attribute   h1  p                     
+                                        /    \
+                              text node       text node                    
+                                                                               -->
+            
+    <!-- DOM means is like a document and you can do page manipulation-->
+    <!-- DOM: Document Object Model, jo ki object se bana hota like head, body, ye kya uska model hai kya uska structure hai , aur page kaise dikhta hai -->
+     <!-- Event: ek button click per kya hona chahiye, kya process hona chahiye, web server per request jaani chahiye ki nahi jaani chahiye -->
+      <!-- some important information(for browser):
+       console.log(window.document);// it will give what are document included
+       console.dir(document);
+       console.log(document.baseURI); it will give you the link of that page
+       console.log(document.links); it will give you all links
+       console.log(document.links[2]); it will give you 2nd link
+       document.getElementById('firstheading'); it will give you tag where this id used in tag
+       document.getElementById('firstheading').innerHTML="<h1>chai aur code</h1>" // if want to change heading in browser
+
+document.getElementById('title').id
+o/p: 'title'
+document.getElementById('title').className
+o/p: 'heading'
+document.getElementById('title').getAttribute('id')
+o/p: 'title'
+document.getElementById('title').getAttribute('class')
+o/p: 'heading'
+document.getElementById('title').setAttribute('class', 'test')
+o/p: undefined(it will change value of 'class')
+document.getElementById('title').setAttribute('class', 'test heading')
+o/p: undefined
+
+
+onst title = document.getElementById('title')
+o/p: undefined
+title
+o/p: <h1 id=​"title" class=​"test heading">​DOM , learning​</h1>​
+title.style.backgroundColor = 'green'
+o/p: 'green'
+title.style.padding="50px"
+o/p: '50px'
+title.style.borderRadius = "50px"
+o/p: '50px'
+
+//textContent: it doesn't hide span text
+title.textContent
+o/p: 'DOM , learning test text'
+
+//innerText: it hides span text
+title.innerText
+o/p: 'DOM , learning'
+
+//innerHTML: it gives all value
+title.innerHTML
+o/p: 'DOM , learning <span style="display:none">test text</span>'
+
+//here we passing class value
+document.getElementsByClassName('heading')
+o/p: HTMLCollection [h1#title.heading, title: h1#title.heading]0: h1#title.headingtitle: h1#title.headinglength: 1[[Prototype]]: HTMLCollection
+
+//it will give all h1 tag
+document.querySelector('h1')
+o/p: <h1 id=​"title" class=​"heading">​…​</h1>​"DOM , learning "<span style=​"display:​none">​test text​</span>​</h1>​
+
+//it will give h2 tag
+document.querySelector('h2')
+o/p: <h2>​DOM, learning​</h2>​
+
+//here you can access id attribute similar to 'CSS'
+document.querySelector('#title')
+o/p: <h1 id=​"title" class=​"heading">​…​</h1>​
+
+//here you can access class attribute
+document.querySelector('.heading')
+o/p: <h1 id=​"title" class=​"heading">​…​</h1>​
+
+//here you can access  input type
+document.querySelector('input[type="password"]')
+o/p: <input type=​"password" name=​"number" id=​"123" fdprocessedid=​"tkvomh">​
+
+//Ek individual element ko kaise select karte hain
+
+document.querySelector('ul')
+o/p: <ul>​…​</ul>​
+const myul = document.querySelector('ul')
+o/p: undefined
+myul.querySelector('li')
+o/p: <li>​…​</li>​
+const turngreen = myul.querySelector('li')
+o/p: undefined
+turngreen.style.backgroundColor="green"
+o/p: 'green'
+turngreen.style.padding="10px"
+o/p: '10px'
+turngreen.innerText
+o/p: 'one'
+turngreen.innerText="five"
+o/p: 'five
+      -->
+     <div class="bg-black">
+        <h1 id="title" class="heading">DOM , learning <span style="display:none">test text</span></h1>
+        <h2>DOM, learning</h2>
+        <h3>DOM, learning</h3>
+        <h4>DOM, learning</h4>
+        <p>We are learning dom</p>
+        <input type="password" name="number" id="123">
+        <ul>
+         <li>one</li>
+         <li>two</li>
+         <li>three</li>
+        </ul>
+     </div>
+</body>
+</html>
