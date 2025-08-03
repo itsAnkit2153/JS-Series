@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style="background-color:black; color: #fff;">
+    <div class="parent">
+        <div class="day">Monday</div>
+        <div class="day">Tuesday</div>
+        <div class="day">Wednesday</div>
+        <div class="day">Thursday</div>
+    </div>
+</body>
+<script>
+    const parent = document.querySelector('.parent')
+    console.log(parent); 
+    console.log(parent.children); // it will give you 'HTMLCollection'
+    console.log(parent.children[1].innerText); // accessing 2nd element
+
+    for(let i=0; i<parent.children.length; i++){
+        console.log(parent.children[i].innerText);  
+    }
+    parent.children[0].style.color = 'green'; // make green to first element
+    console.log(parent.firstElementChild); // it will give 1st element div
+    console.log(parent.lastElementChild);// it will give last element div
+
+    const dayOne = document.querySelector('.day');
+    console.log(dayOne); // it will give 1st element div
+    console.log(dayOne.parentElement)//it will give parent div
+    console.log(dayOne.nextElementSibling)// it will give new next sibling/neighbor/adjacent
+
+    console.log("NODE: ", parent.childNodes); // it shows no. of nodes by the way total : 9 node present
+
+    /*
+ childNodes:   
+NodeList(9) [text, div.day, text, div.day, text, div.day, text, div.day, text]
+0: text // for next line
+1: div.day // monday
+2: text
+3: div.day // Tuesday
+4: text
+5: div.day // wednesday
+6: text
+7: div.day // thursday
+8: text
+length: 9
+[[Prototype]]: NodeList
+    */
+
+
+</script>
+</html>
