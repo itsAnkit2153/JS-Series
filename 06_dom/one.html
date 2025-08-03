@@ -55,7 +55,7 @@ document.getElementById('title').setAttribute('class', 'test heading')
 o/p: undefined
 
 
-onst title = document.getElementById('title')
+const title = document.getElementById('title')
 o/p: undefined
 title
 o/p: <h1 id=​"title" class=​"test heading">​DOM , learning​</h1>​
@@ -81,6 +81,8 @@ o/p: 'DOM , learning <span style="display:none">test text</span>'
 //here we passing class value
 document.getElementsByClassName('heading')
 o/p: HTMLCollection [h1#title.heading, title: h1#title.heading]0: h1#title.headingtitle: h1#title.headinglength: 1[[Prototype]]: HTMLCollection
+
+// uses of querySelector
 
 //it will give all h1 tag
 document.querySelector('h1')
@@ -120,6 +122,86 @@ turngreen.innerText
 o/p: 'one'
 turngreen.innerText="five"
 o/p: 'five
+
+//querySelectorAll apply in 'li' list
+
+document.querySelectorAll('li')
+o/p: NodeList(3) [li, li, li]
+const tempLiList = document.querySelectorAll('li')
+o/p: undefined
+tempLiList
+o/p: NodeList(3) [li, li, li]
+
+// yaha per Node , list ke jaisa hai na ki array
+
+//it will print first element into green
+tempLiList[0].style.color = 'green'
+o/p: 'green'
+
+
+//queryselectorALL apply in 'h1' heading
+
+document.querySelectorAll('h1')
+o/p: NodeList [h1#title.heading]
+const myH1 = document.querySelectorAll('h1')
+o/p: undefined
+myH1[0].style.color = 'yellow'
+o/p: 'yellow'
+
+
+// Using 'forEach' method (this is best for Node kiuki hum Node me 'map' nahi laga sakte)
+// 'map' is useful for array
+
+tempLiList.forEach(function (l) {
+    l.style.backgroundColor = 'green'
+})
+o/p: undefined
+
+
+// here we know how we can access class
+
+
+document.getElementsByClassName("list-item")
+o/p: HTMLCollection(4) [li.list-item, li.list-item, li.list-item, li.list-item]
+const tempClassList = document.getElementsByClassName("list-item")
+o/p: undefined
+
+// convert HTML collection (which is Node) into Array
+
+Array.from(tempClassList)
+o/p: (4) [li.list-item, li.list-item, li.list-item, li.list-item]
+
+//using 'forEach' and 'map' after converting NodeList into array
+
+myConvertedArray.forEach( function(li) {
+    li.style.color = 'blue'
+})
+o/p: undefined
+myConvertedArray.map( function(li) {
+    li.style.padding = '10px'
+})
+o/p: (4) [undefined, undefined, undefined, undefined]
+
+
+//to access any heading
+
+document.querySelectorAll('h2')
+o/p: NodeList(14) [h2.vector-pinnable-header-label, h2#History, h2#Trademark, h2#Website_client-side_usage, h2#Other_usage, h2#Execution, h2#Features, h2#Syntax, h2#Security, h2#Development_tools, h2#Related_technologies, h2#References, h2#Further_reading, h2#External_links]
+
+const myh = document.querySelectorAll('h2')
+o/p: undefined
+Array.from(myh)
+(14) [h2.vector-pinnable-header-label, h2#History, h2#Trademark, h2#Website_client-side_usage, h2#Other_usage, h2#Execution, h2#Features, h2#Syntax, h2#Security, h2#Development_tools, h2#Related_technologies, h2#References, h2#Further_reading, h2#External_links]
+
+const myH = Array.from(myh)
+o/p: undefined
+
+myH.forEach( function(h) {
+    h.style.color = 'yellow';
+    h.style.backgroundColor = 'green';
+    h.style.padding = '10px';
+    h.innerText = 'Ankit'
+})
       -->
      <div class="bg-black">
         <h1 id="title" class="heading">DOM , learning <span style="display:none">test text</span></h1>
@@ -129,9 +211,10 @@ o/p: 'five
         <p>We are learning dom</p>
         <input type="password" name="number" id="123">
         <ul>
-         <li>one</li>
-         <li>two</li>
-         <li>three</li>
+         <li class="list-item">one</li>
+         <li class="list-item">two</li>
+         <li class="list-item">three</li>
+         <li class="list-item">four</li>
         </ul>
      </div>
 </body>
